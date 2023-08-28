@@ -1,23 +1,23 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        int count=0;
-        if(s.size()!=t.size()) return false;
+     if (s.size() != t.size()) {
+            return false;
+        }    
         
-        for(int i=0;i<s.size();i++){
-            
-            for(int j=0;j<s.size();j++){
-                if(s[i]==t[j]){
-                     t.erase(t.begin() + j);
-                     break;
-                }
-               
-            }
+    unordered_map<char, int> charCount;
+
+        for (char c : s) {
+            charCount[c]++;
         }
-        
-        if(t.size()==0 && count ==0 ) return true;
-        
-        return false;
-        
+
+        for (char c : t) {
+            if (charCount.find(c) == charCount.end() || charCount[c] == 0) {
+                return false;
+            }
+            charCount[c]--;
+        }
+
+        return true;
     }
 };
