@@ -8,23 +8,17 @@ using namespace std;
 
 
 // } Driver Code Ends
-
-
-
+//User function Template for C++
 class Solution
 {
     public:
     string reverseWord(string str)
     {
-        string s;
-        // reverse(s.begin(),s.end());
-        // return s;
-        
-        for(int i=str.size();i>=0;i--){
-            s += str[i];
+        string strcopy;
+        for(int i=str.length();i>=0;i--){
+            strcopy+=str[i];
         }
-        
-        return s;
+    return strcopy;
     }
 };
 
